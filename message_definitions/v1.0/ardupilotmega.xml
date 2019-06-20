@@ -1491,6 +1491,24 @@
       <field type="float" name="rpm1">RPM Sensor1.</field>
       <field type="float" name="rpm2">RPM Sensor2.</field>
     </message>
+    <!-- 227 to flight status sync -->
+    <message id="227" name="FLT_STATUS">
+      <description>sync flight status</description>
+      <field type="uint8_t" name="sync_id">different status id</field>
+      <field type="uint8_t" name="sync_value">flight status</field>
+    </message>
+    <!-- 228 to tethered power status -->
+    <message id="228" name="TETHERED_STATUS">
+	  <description>tethered onboard power status</description>
+	  <field type="uint8_t" name="tet_cell_nums">tethered total cells nums</field>
+	  <field type="uint8_t[4]" name="tet_cell_name">tethered cells address</field>
+	  <field type="uint16_t[4]" name="tet_cell_vin">tethered cells input voltage</field>
+	  <field type="uint16_t[4]" name="tet_cell_iin">tethered cells input current</field>
+	  <field type="uint16_t[4]" name="tet_cell_vout">tethered cells output voltage</field>
+	  <field type="uint16_t[4]" name="tet_cell_iout">tethered cells output current</field>
+	  <field type="uint8_t[4]" name="tet_cell_temp">tethered cells temperature</field>
+	  <field type="uint8_t[4]" name="tet_cell_state">tethered cells status</field>
+    </message>
     <!-- ardupilot specific mavlink2 messages starting at 11000-->
     <message id="11000" name="DEVICE_OP_READ">
       <description>Read registers for a device.</description>
